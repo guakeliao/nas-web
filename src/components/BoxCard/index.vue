@@ -4,13 +4,14 @@
   </template>
 </template>
 
-<script setup>
+<script setup lang="ts">
+import type {PropType} from "vue";
 import BoxItem from './BoxItem.vue'
-import medias from "@/config/Media";
+import medias, {Media} from "@/config/Media";
 
 const props = defineProps({
   medias: {
-    type: Array,
+    type: Array as PropType<Media>,
     default: []
   }
 })
@@ -18,8 +19,7 @@ const itemClick = (index) => {
   let media = medias[index]
   console.log(index)
   console.log(media)
-  window.location.href = media.ip
-
+  window.location.href = `${window.location.protocol}//${window.location.hostname}:${media.port}`
 }
 </script>
 
