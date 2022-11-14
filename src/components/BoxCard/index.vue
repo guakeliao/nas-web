@@ -6,7 +6,7 @@
 
 <script setup>
 import BoxItem from './BoxItem.vue'
-import medias, {Media} from "@/config/Media";
+import medias from "@/config/Media";
 
 const props = defineProps({
   medias: {
@@ -18,6 +18,8 @@ const itemClick = (index) => {
   let media = medias[index]
   console.log(index)
   console.log(media)
+  window.location.href = media.ip
+
 }
 </script>
 
