@@ -14,10 +14,10 @@
 
 <script setup lang="ts">
 import type {PropType} from "vue";
-import {Media} from "@/config/Media";
+import type {Media} from "@/config/Media";
 
 const props = defineProps({
-  index: {type: Number, default: 0},
+  index: {type: [Number, String], default: 0},
   media: {
     type: Object as PropType<Media>,
     default: null

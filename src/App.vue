@@ -5,7 +5,7 @@ import medias from "@/config/Media";
 
 <template>
   <div class="container">
-    <BoxCard class="card" :medias="medias"></BoxCard>
+    <BoxCard class="card" :mediaList="medias"></BoxCard>
   </div>
 </template>
 
@@ -19,7 +19,6 @@ import medias from "@/config/Media";
   display: flex;
   flex-wrap: wrap;
   align-content: flex-start;
-  justify-content:center;
 }
 
 .card {

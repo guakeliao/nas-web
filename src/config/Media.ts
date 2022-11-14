@@ -20,7 +20,7 @@ export class Media implements NAS {
     newOpen: boolean = true;
 }
 
-const medias: Media[] = [
+const medias: Array<Media> = [
     new Media('DSM', '2928', 'DSM'),
     new Media('EMBY', '8097', '电影影视'),
     new Media('青龙1', '5701', '账号池1'),
