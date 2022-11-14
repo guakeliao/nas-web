@@ -11,21 +11,26 @@ import medias, {Media} from "@/config/Media";
 
 const props = defineProps({
   medias: {
-    type: Array as PropType<Media>,
+    type: Array as unknown as PropType<Media>,
     default: []
   }
 })
-const itemClick = (index) => {
+const itemClick = (index: number) => {
   let media = medias[index]
-  console.log(index)
-  console.log(media)
-  window.location.href = `${window.location.protocol}//${window.location.hostname}:${media.port}`
+  // console.log(index)
+  // console.log(media)
+  if (media.newOpen) {
+    window.open(`${window.location.protocol}//${window.location.hostname}:${media.port}`)
+  } else {
+    //弹出框
+  }
 }
 </script>
 
 <style scoped>
 .item {
   margin: 5px;
+  min-width: 300px;
   width: calc(25% - 10px);
   height: 200px;
   display: flex;

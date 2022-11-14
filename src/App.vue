@@ -19,6 +19,7 @@ import medias from "@/config/Media";
   display: flex;
   flex-wrap: wrap;
   align-content: flex-start;
+  justify-content:center;
 }
 
 .card {

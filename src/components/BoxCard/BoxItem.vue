@@ -1,13 +1,13 @@
 <template>
-  <el-card class="item" @click="click">
+  <el-card class="item" @dblclick="click">
     <div>
-      <span>{{ media.name }}</span>
+      <span>应用名:{{ media.name }}</span>
     </div>
     <div>
-      <span>{{ media.port }}</span>
+      <span>端口号:{{ media.port }}</span>
     </div>
     <div>
-      <span>{{ media.description }}</span>
+      <span>描 述:{{ media.description }}</span>
     </div>
   </el-card>
 </template>
@@ -24,7 +24,7 @@ const props = defineProps({
   }
 })
 const emits = defineEmits(['itemClick'])
-const click = (e) => {
+const click = (e: any) => {
   emits('itemClick', props.index)
 }
 </script>
