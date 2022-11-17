@@ -8,6 +8,7 @@
 import BoxItem from './BoxItem.vue'
 import type {PropType} from "vue";
 import type {Media} from "@/config/Media";
+import {SYS_CODE} from "@/config/Media";
 
 const props = defineProps({
   mediaList: {
@@ -19,10 +20,21 @@ const itemClick = (index: number) => {
   let media = props.mediaList[index]
   // console.log(index)
   // console.log(media)
-  if (media.newOpen) {
-    window.open(`${window.location.protocol}//${window.location.hostname}:${media.port}`)
-  } else {
-    //弹出框
+  switch (media.code) {
+    case SYS_CODE.dsm:
+    case SYS_CODE.emby:
+    case SYS_CODE.ql_1:
+    case SYS_CODE.ql_2:
+    case SYS_CODE.ql_9:
+    case SYS_CODE.tr:
+      window.open(`${window.location.protocol}//${window.location.hostname}:${media.port}`)
+      break;
+    case SYS_CODE.update_jd:
+      break;
+    case SYS_CODE.update_jd:
+      break;
+    default: {
+    }
   }
 }
 </script>

@@ -1,11 +1,13 @@
 <script setup lang="ts">
 import BoxCard from '@/components/BoxCard/index.vue'
+import FormatCk from '@/components/FormatCk/index.vue'
 import medias from "@/config/Media";
 </script>
 
 <template>
   <div class="container">
     <BoxCard class="card" :mediaList="medias"></BoxCard>
+    <FormatCk></FormatCk>
   </div>
 </template>
 
