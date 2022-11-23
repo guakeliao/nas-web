@@ -4,7 +4,7 @@
       <span>应用名:{{ media.name }}</span>
     </div>
     <div>
-      <span>端口号:{{ media.port }}</span>
+      <span>端口号:{{ media.ip }}</span>
     </div>
     <div>
       <span>描 述:{{ media.description }}</span>

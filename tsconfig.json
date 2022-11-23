@@ -10,11 +10,16 @@
   ],
   "compilerOptions": {
     "baseUrl": ".",
+    "resolveJsonModule": true,
+    "allowJs": true,
     "paths": {
       "@/*": [
         "./src/*"
       ]
-    }
+    },
+    "typeRoots": [
+      "node_modules/@types"
+    ]
   },
   "references": [
     {

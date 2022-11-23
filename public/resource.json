@@ -1,0 +1,20 @@
+[
+  {
+    "code": "local",
+    "name": "DSM",
+    "ip": "192.168.31.253:5000",
+    "description": "本地"
+  },
+  {
+    "code": "zerotier",
+    "name": "DSM",
+    "ip": "192.168.192.252:500",
+    "description": "zerotier"
+  },
+  {
+    "code": "network",
+    "name": "DSM",
+    "ip": "dsm.guakeliao.top:500",
+    "description": "network"
+  }
+]

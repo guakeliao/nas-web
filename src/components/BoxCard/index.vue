@@ -20,22 +20,22 @@ const itemClick = (index: number) => {
   let media = props.mediaList[index]
   // console.log(index)
   // console.log(media)
-  switch (media.code) {
-    case SYS_CODE.dsm:
-    case SYS_CODE.emby:
-    case SYS_CODE.ql_1:
-    case SYS_CODE.ql_2:
-    case SYS_CODE.ql_9:
-    case SYS_CODE.tr:
-      window.open(`${window.location.protocol}//${window.location.hostname}:${media.port}`)
-      break;
-    case SYS_CODE.update_jd:
-      break;
-    case SYS_CODE.update_jd:
-      break;
-    default: {
-    }
-  }
+  // switch (media.code) {
+  //   case SYS_CODE.dsm:
+  //   case SYS_CODE.emby:
+  //   case SYS_CODE.ql_1:
+  //   case SYS_CODE.ql_2:
+  //   case SYS_CODE.ql_9:
+  //   case SYS_CODE.tr:
+  //     window.open(`${window.location.protocol}//${window.location.hostname}:${media.port}`)
+  //     break;
+  //   case SYS_CODE.update_jd:
+  //     break;
+  //   case SYS_CODE.update_jd:
+  //     break;
+  //   default: {
+  //   }
+  // }
 }
 </script>
 
@@ -43,7 +43,7 @@ const itemClick = (index: number) => {
 .item {
   margin: 5px;
   min-width: 300px;
-  width: calc(25% - 10px);
+  width: calc(33.3% - 10px);
   height: 200px;
   display: flex;
   align-items: center;
