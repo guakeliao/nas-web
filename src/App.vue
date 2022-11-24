@@ -17,6 +17,11 @@ const modelChange = (val: Event) => {
     }
   })
 }
+const itemClick = (media: Media, index: number) => {
+  console.log(index)
+  console.log(media)
+  window.open(`${window.location.protocol}//${media.url}`)
+}
 medias().then(res => {
   allMediaList.value = res;
   currentMediaList.value = allMediaList.value.filter(item => item.code === model.value)
@@ -34,7 +39,7 @@ medias().then(res => {
       </el-radio-group>
     </div>
     <div class="container">
-      <BoxCard class="card" :mediaList="currentMediaList"></BoxCard>
+      <BoxCard class="card" :mediaList="currentMediaList" @itemClick="itemClick"></BoxCard>
       <FormatCk></FormatCk>
     </div>
   </div>
@@ -49,7 +54,6 @@ medias().then(res => {
   bottom: 10%;
   display: flex;
   flex-wrap: wrap;
-  /*flex-direction: column;*/
   justify-content: flex-start;
   align-content: flex-start;
   overflow: scroll;

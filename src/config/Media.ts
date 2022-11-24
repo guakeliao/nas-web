@@ -11,22 +11,22 @@ export enum SYS_CODE {
 interface NAS {
     code: SYS_CODE
     name: string,
-    ip: string,
+    url: string,
     description: string
 }
 
 export class Media implements NAS {
-    constructor(code: SYS_CODE, name: string, ip: string, description: string) {
+    constructor(code: SYS_CODE, name: string, url: string, description: string) {
         this.code = code
         this.name = name
-        this.ip = ip
+        this.url = url
         this.description = description
     }
 
     code: SYS_CODE;
     description: string;
     name: string;
-    ip: string;
+    url: string;
 }
 
 let medias = async () => {

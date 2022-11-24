@@ -4,7 +4,7 @@
       <span>应用名:{{ media.name }}</span>
     </div>
     <div>
-      <span>端口号:{{ media.ip }}</span>
+      <span>地 址:{{ media.url }}</span>
     </div>
     <div>
       <span>描 述:{{ media.description }}</span>
@@ -24,8 +24,9 @@ const props = defineProps({
   }
 })
 const emits = defineEmits(['itemClick'])
+
 const click = (e: any) => {
-  emits('itemClick', props.index)
+  emits('itemClick', props.media, props.index)
 }
 </script>
 

@@ -11,6 +11,7 @@ import type {Media} from "@/config/Media";
 import {SYS_CODE} from "@/config/Media";
 import {computed, onMounted, ref} from "vue";
 
+const emits = defineEmits(['itemClick'])
 const props = defineProps({
   mediaList: {
     type: Array as PropType<Media[]>,
@@ -32,8 +33,8 @@ onMounted(() => {
     }
   })
 })
-const itemClick = (index: number) => {
-  let media = props.mediaList[index]
+const itemClick = (media: Media, index: number) => {
+  emits('itemClick', media, index);
   // console.log(index)
   // console.log(media)
   // switch (media.code) {
