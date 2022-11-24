@@ -1,6 +1,6 @@
 <template>
   <template v-for="(media,idx) in mediaList">
-    <BoxItem class="item" :index="idx" :media="media" @itemClick="itemClick"></BoxItem>
+    <BoxItem class="item" :style="itemWidth" :index="idx" :media="media" @itemClick="itemClick"></BoxItem>
   </template>
 </template>
 
@@ -9,12 +9,28 @@ import BoxItem from './BoxItem.vue'
 import type {PropType} from "vue";
 import type {Media} from "@/config/Media";
 import {SYS_CODE} from "@/config/Media";
+import {computed, onMounted, ref} from "vue";
 
 const props = defineProps({
   mediaList: {
     type: Array as PropType<Media[]>,
     default: []
   }
+})
+const col = ref(3)
+const itemWidth = computed(() => {
+  return `--itemWidth:calc(100% / ${col.value} - 10px)`
+})
+onMounted(() => {
+  window.addEventListener('resize', () => {
+    if (window.innerWidth > 900) {
+      col.value = 3
+    } else if (window.innerWidth > 600 && window.innerWidth < 900) {
+      col.value = 2
+    } else {
+      col.value = 1
+    }
+  })
 })
 const itemClick = (index: number) => {
   let media = props.mediaList[index]
@@ -42,9 +58,7 @@ const itemClick = (index: number) => {
 <style scoped>
 .item {
   margin: 5px;
-  min-width: 300px;
-  width: calc(33.3% - 10px);
-  height: 200px;
+  width: var(--itemWidth);
   display: flex;
   align-items: center;
 }

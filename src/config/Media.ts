@@ -2,6 +2,7 @@
 import axios from "axios";
 
 export enum SYS_CODE {
+    all = 'all',
     local = 'local',
     zerotier = 'zerotier',
     network = 'network'
